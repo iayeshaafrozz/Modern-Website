@@ -1,0 +1,19 @@
+**Website Desig Prompt:**
+
+Design a modern, visually immersive restaurant website for **Cafe Hawaii**, a continental restaurant located in Gulshan-e-Iqbal, Block 4, Karachi. The site should capture a **tropical, laid-back "Aloha" vibe** fused with a **cozy, upscale dining atmosphere** — think tiki-lounge warmth meets modern restaurant elegance.
+
+**Color Palette:** Use a tropical sunset theme — warm **coral/burnt-orange** and **golden-yellow** as primary accents (evoking Hawaiian sunsets and warmth), paired with deep **teal/turquoise** as a secondary color (evoking ocean/tropical freshness), on a **cream or soft off-white** background for a clean, breathable layout. Use dark charcoal or espresso-brown for text to keep it grounded and readable.
+
+**Sections to include:**
+1. **Hero section** — full-width tropical-themed background image/video, tagline "We Serve Passion," with a "Reserve a Table" or "Order Now" CTA button in coral.
+2. **About** — short brand story emphasizing "mastering the art of food from the kitchen," tropical vibes, and Aloha spirit.
+3. **Menu highlights** — showcase signature dishes with price range (Rs 2,000–3,000 per person), styled as elegant cards with food photography.
+4. **Gallery** — Instagram-style grid pulling from their tropical/food aesthetic (15K+ IG followers, 8.6K+ FB followers).
+5. **Reviews/Social proof** — display 4.4★ rating from 1,000+ Google reviews prominently.
+6. **Location & Hours** — embedded map for Plot C-102, Block 4, Gulshan-e-Iqbal, Karachi; show live "Open/Closes Soon" status.
+7. **Contact & Reservations** — phone numbers (021-34980002, 021-34980003, 0309-1358888) and social media links (Instagram/Facebook/TikTok).
+8. **Footer** — social icons, quick links, newsletter signup.
+
+**Typography:** A rounded, friendly sans-serif for body text (e.g., Poppins/Nunito) paired with a bold, slightly tropical-feeling display font for headings (e.g., Fraunces or Playfair for elegance, or a script accent font for "Aloha"-style callouts).
+
+**Overall feel:** Warm, inviting, slightly playful but still polished — like a beachside restaurant that takes its food seriously. Mobile-responsive, fast-loading, with smooth scroll animations and hover effects on menu/gallery items.

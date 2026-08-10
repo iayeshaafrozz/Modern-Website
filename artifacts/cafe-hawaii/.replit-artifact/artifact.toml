@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Cafe Hawaii"
+description = "A warm, tropical restaurant website for Cafe Hawaii in Gulshan-e-Iqbal, Karachi, featuring the Aloha dining experience, menu highlights, gallery, reviews, location details, and reservations."
+version = "1.0.0"
+id = "artifacts/cafe-hawaii"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19501
+
+[services.development]
+run = "pnpm --filter @workspace/cafe-hawaii run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cafe-hawaii", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/cafe-hawaii/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19501"
+BASE_PATH = "/"
