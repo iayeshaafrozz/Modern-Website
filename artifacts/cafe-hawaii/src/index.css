@@ -108,11 +108,16 @@
 .float-ring { animation: float-ring 5s ease-in-out infinite; }
 .marquee-track { animation: marquee 28s linear infinite; }
 .focus-ring:focus-visible { outline: 3px solid hsl(var(--accent)); outline-offset: 4px; }
+.logo-monogram { letter-spacing: -.12em; padding-right: .12em; }
+.cart-pulse { animation: cart-pulse .5s cubic-bezier(.2,.8,.2,1); }
+.cart-badge { animation: badge-pop .5s cubic-bezier(.2,.8,.2,1); }
 @keyframes hero-drift { from { transform: scale(1.04); } to { transform: scale(1.1) translate3d(-1%, -1%, 0); } }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes float-ring { 0%, 100% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(4deg) translateY(-8px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes cart-pulse { 0%, 100% { transform: scale(1) rotate(0); } 35% { transform: scale(1.12) rotate(-4deg); } 70% { transform: scale(1.04) rotate(4deg); } }
+@keyframes badge-pop { 0% { transform: scale(.65); opacity: .6; } 60% { transform: scale(1.18); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }

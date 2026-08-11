@@ -1,15 +1,18 @@
 import { useMemo, useState } from 'react';
-import { ArrowRight, Plus, ShoppingBag } from 'lucide-react';
-import { formatPrice, menuCategories, menuItems, type MenuCategory, type MenuItem } from '@/data/menu';
+import { ArrowRight, Check, Minus, Plus, ShoppingBag } from 'lucide-react';
+import { formatPrice, menuCategories, menuItems, type CartLine, type MenuCategory, type MenuItem } from '@/data/menu';
 
 type MenuSectionProps = {
   onAddToCart: (item: MenuItem) => void;
+  onChangeQuantity: (id: string, quantity: number) => void;
+  cartLines: CartLine[];
   cartCount: number;
 };
 
-export function MenuSection({ onAddToCart, cartCount }: MenuSectionProps) {
+export function MenuSection({ onAddToCart, onChangeQuantity, cartLines, cartCount }: MenuSectionProps) {
   const [active, setActive] = useState<MenuCategory>('Appetizers');
   const filteredItems = useMemo(() => menuItems.filter((item) => item.category === active), [active]);
+  const cartQuantity = (id: string) => cartLines.find((line) => line.item.id === id)?.quantity ?? 0;
 
   return (
     <section id="menu" className="section-pad bg-[#e5eee4]">
@@ -27,12 +30,12 @@ export function MenuSection({ onAddToCart, cartCount }: MenuSectionProps) {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredItems.map((item, index) => (
-            <article key={item.id} className="reveal in-view group flex min-h-[188px] flex-col justify-between rounded-[1.4rem] border border-[#bfd0c1] bg-[#fff8e9]/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#ef725f]/50 hover:bg-[#fffdf6] hover:shadow-lg" data-testid={`menu-item-${item.id}`}>
+              <article key={item.id} className={`reveal in-view group flex min-h-[188px] flex-col justify-between rounded-[1.4rem] border bg-[#fff8e9]/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-[#fffdf6] hover:shadow-lg ${cartQuantity(item.id) ? 'border-[#ef725f] bg-[#fffdf6] shadow-[0_0_0_2px_rgba(239,114,95,.12)]' : 'border-[#bfd0c1] hover:border-[#ef725f]/50'}`} data-testid={`menu-item-${item.id}`}>
               <div className="flex gap-4">
                 {item.image && <div className="image-zoom h-16 w-16 shrink-0 overflow-hidden rounded-xl"><img src={item.image} alt="" className="h-full w-full object-cover" /></div>}
                 <div className="min-w-0"><div className="flex flex-wrap items-start gap-2"><h3 className="font-display text-2xl leading-tight text-[#163f42]">{item.name}</h3>{item.tag && <span className="rounded-full bg-[#f8d47a] px-2 py-1 text-[.57rem] font-bold uppercase tracking-wider text-[#163f42]">{item.tag}</span>}</div>{item.description && <p className="mt-2 text-sm leading-6 text-[#426266]">{item.description}</p>}</div>
               </div>
-              <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#bfd0c1]/70 pt-4"><div className="text-sm font-bold text-[#ef725f]"><span>{formatPrice(item.price)}</span>{item.priceNote && <span className="ml-2 text-xs font-semibold text-[#426266]">· {item.priceNote}</span>}</div><button type="button" onClick={() => onAddToCart(item)} className="inline-flex items-center gap-2 rounded-full bg-[#ef725f] px-3.5 py-2 text-[.65rem] font-bold uppercase tracking-[.12em] text-[#fff8e9] transition hover:bg-[#df5f4d]" data-testid={`button-add-${item.id}`}><Plus size={14} /> Add to cart</button></div>
+              <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#bfd0c1]/70 pt-4"><div className="text-sm font-bold text-[#ef725f]"><span>{formatPrice(item.price)}</span>{item.priceNote && <span className="ml-2 text-xs font-semibold text-[#426266]">· {item.priceNote}</span>}</div>{cartQuantity(item.id) ? <div className="flex items-center rounded-full bg-[#163f42] text-[#fff8e9]" data-testid={`stepper-${item.id}`}><button type="button" onClick={() => onChangeQuantity(item.id, cartQuantity(item.id) - 1)} className="grid h-8 w-8 place-items-center rounded-full transition hover:bg-[#28575a]" aria-label={`Decrease ${item.name}`} data-testid={`button-menu-decrease-${item.id}`}><Minus size={13} /></button><span className="flex items-center gap-1 px-1 text-[.63rem] font-bold uppercase tracking-wider"><Check size={13} className="text-[#f8d47a]" /> In Cart ×{cartQuantity(item.id)}</span><button type="button" onClick={() => onChangeQuantity(item.id, cartQuantity(item.id) + 1)} className="grid h-8 w-8 place-items-center rounded-full transition hover:bg-[#28575a]" aria-label={`Increase ${item.name}`} data-testid={`button-menu-increase-${item.id}`}><Plus size={13} /></button></div> : <button type="button" onClick={() => onAddToCart(item)} className="inline-flex items-center gap-2 rounded-full bg-[#ef725f] px-3.5 py-2 text-[.65rem] font-bold uppercase tracking-[.12em] text-[#fff8e9] transition hover:bg-[#df5f4d]" data-testid={`button-add-${item.id}`}><Plus size={14} /> Add to cart</button>}</div>
             </article>
           ))}
         </div>

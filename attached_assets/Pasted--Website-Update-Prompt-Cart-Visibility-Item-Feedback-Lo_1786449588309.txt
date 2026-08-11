@@ -1,0 +1,29 @@
+**Website Update Prompt: Cart Visibility, Item Feedback & Logo Fix**
+
+Keep the exact same tropical Aloha design system already in place — same colors, fonts, spacing, and animation style. These are refinements to existing functionality, not new sections.
+
+**1. Make the Cart More Noticeable**
+The cart icon in the nav is currently too small and easy to miss — right now there's no clear indicator when it's been updated. Fix this by:
+- Adding a visible item-count badge on the cart icon (small circular badge, coral background, white number) that appears the moment an item is added and updates live as items are added/removed
+- Give the badge a brief pop/bounce animation each time the count changes, so it's obvious something happened even out of the corner of the eye
+- Make the cart icon itself slightly larger and higher-contrast against the nav background so it doesn't blend in
+- Optionally, on add-to-cart, briefly animate the cart icon (a subtle shake or scale-pulse) as extra confirmation
+
+**2. Show Clear Feedback When a Dish Is Added**
+Right now, clicking "Add to Cart" gives no visible difference on that specific item card — it should be obvious at a glance which dishes are already in the cart versus which aren't. Add:
+- When an item is added, change its "Add to Cart" button to a temporary "Added ✓" state (different color/style, e.g. teal background with checkmark) for a couple seconds before reverting, OR keep it in an "In Cart" state with a quantity stepper if it's already added
+- Give the whole card a subtle visual change when it's in the cart — e.g. a thin coral/teal border highlight or a small "In Cart" tag in the corner — so scanning the menu shows immediately which dishes are already selected
+- If the same item is added multiple times, reflect the quantity directly on the card (e.g. "In Cart ×2") rather than only inside the cart drawer
+
+**3. Fix the Logo**
+The current site logo only shows the letter "H" inside the circular badge, but the actual brand logo is the full "CH" monogram (interlocking C and H, in the elegant serif style shown in the reference image, with "ESTD. 2023" beneath it). Replace the current single-letter logo mark across the site (nav, footer, favicon if applicable) with the correct "CH" monogram to match the real Cafe Hawaii branding.
+
+**4. Fix Phone Number Field Overflow in the Reservation Modal**
+In the "Reserve your evening" modal, the placeholder text in the Phone Number field (e.g. "0300 0000000") is overflowing/spilling outside the input box boundary. Fix this by:
+- Adjusting the input field's padding, font size, or width so the placeholder and any typed number stay fully contained within the box at all screen sizes
+- Make sure this doesn't break on mobile view either — test smaller widths too
+- Keep the same rounded input styling already used across the form (Name, Date, Time, Guests fields) — just correct the overflow, not the visual style
+
+**Keep everything else exactly as is** — same layout, same menu structure, same cart drawer behavior, same reservation modal styling otherwise. These are targeted fixes for clarity, brand accuracy, and a form bug — not a redesign.
+
+After making these changes, check the live preview to confirm: the cart badge updates and animates correctly, added items visibly differ from non-added ones on the menu grid, the logo now correctly shows "CH" instead of just "H", and the phone number field no longer overflows its box on desktop or mobile.
