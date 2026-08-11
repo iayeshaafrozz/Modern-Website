@@ -1,20 +1,16 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
-import { ArrowDown, ArrowRight, Check, ChevronLeft, ChevronRight, Clock3, Instagram, MapPin, Menu, Phone, Sparkles, Star, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check, ChevronLeft, ChevronRight, Clock3, Instagram, MapPin, Menu, Phone, ShoppingBag, Sparkles, Star, X } from 'lucide-react';
+import { CartDrawer } from '@/components/CartDrawer';
+import { MenuSection } from '@/components/MenuSection';
+import { type CartLine, type MenuItem } from '@/data/menu';
 
 const queryClient = new QueryClient();
-
-type Dish = { name: string; detail: string; price: string; image: string; tag?: string };
-const dishes: Dish[] = [
-  { name: 'Coconut Prawn Curry', detail: 'Tiger prawns, green coconut, curry leaf, steamed rice', price: 'Rs 2,450', image: '/images/hero-prawns.jpg', tag: "Chef's pick" },
-  { name: 'Hawaii Seafood Platter', detail: 'Lobster, grilled fish, prawns, mango-lime salsa', price: 'Rs 3,000', image: '/images/seafood-platter.jpg', tag: 'For sharing' },
-  { name: 'Sunset Spritz', detail: 'Pineapple, citrus, basil, sparkling water', price: 'Rs 850', image: '/images/cocktail.jpg', tag: 'Zero-proof' },
-];
 
 function useReveal() {
   useEffect(() => {
@@ -62,11 +58,11 @@ function ReservationModal({ open, onClose }: { open: boolean; onClose: () => voi
   );
 }
 
-function Header({ onReserve }: { onReserve: () => void }) {
+function Header({ onReserve, onCart, cartCount }: { onReserve: () => void; onCart: () => void; cartCount: number }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = [['The story', '#story'], ['Menu', '#menu'], ['Moments', '#moments'], ['Visit us', '#visit']];
-  return <header className="absolute left-0 right-0 top-0 z-30 text-[#fff8e9]"><div className="container-wide flex items-center justify-between py-5"><Mark light /><nav className="hidden items-center gap-8 lg:flex">{links.map(([label, href]) => <a key={href} href={href} className="nav-link focus-ring text-xs font-semibold uppercase tracking-[.15em]" data-testid={`link-nav-${label.toLowerCase().replace(' ', '-')}`}>{label}</a>)}<Button onClick={onReserve} variant="cream" testId="button-nav-reserve">Reserve a table</Button></nav><button type="button" aria-label="Open menu" onClick={() => setMenuOpen(!menuOpen)} className="focus-ring grid h-11 w-11 place-items-center rounded-full border border-[#fff8e9]/40 lg:hidden" data-testid="button-mobile-menu">{menuOpen ? <X /> : <Menu />}</button></div>
-    {menuOpen && <div className="mx-3 rounded-2xl bg-[#163f42] p-5 shadow-xl lg:hidden"><nav className="grid gap-1">{links.map(([label, href]) => <a onClick={() => setMenuOpen(false)} key={href} href={href} className="rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-[#28575a]" data-testid={`link-mobile-${label.toLowerCase().replace(' ', '-')}`}>{label}</a>)}<button onClick={() => { setMenuOpen(false); onReserve(); }} className="mt-3 rounded-full bg-[#ef725f] px-4 py-3 text-xs font-bold uppercase tracking-wider" data-testid="button-mobile-reserve">Reserve a table</button></nav></div>}
+  return <header className="absolute left-0 right-0 top-0 z-30 text-[#fff8e9]"><div className="container-wide flex items-center justify-between py-5"><Mark light /><nav className="hidden items-center gap-7 lg:flex">{links.map(([label, href]) => <a key={href} href={href} className="nav-link focus-ring text-xs font-semibold uppercase tracking-[.15em]" data-testid={`link-nav-${label.toLowerCase().replace(' ', '-')}`}>{label}</a>)}<button type="button" onClick={onCart} className="focus-ring relative grid h-10 w-10 place-items-center rounded-full border border-[#fff8e9]/50 transition hover:bg-[#fff8e9] hover:text-[#163f42]" aria-label={`Open cart${cartCount ? `, ${cartCount} items` : ''}`} data-testid="button-nav-cart"><ShoppingBag size={17} />{cartCount > 0 && <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-[#ef725f] px-1 text-[.62rem] font-bold text-[#fff8e9]" data-testid="text-cart-count">{cartCount}</span>}</button><Button onClick={onReserve} variant="cream" testId="button-nav-reserve">Reserve a table</Button></nav><div className="flex items-center gap-2 lg:hidden"><button type="button" onClick={onCart} className="focus-ring relative grid h-11 w-11 place-items-center rounded-full border border-[#fff8e9]/40" aria-label={`Open cart${cartCount ? `, ${cartCount} items` : ''}`} data-testid="button-mobile-cart"><ShoppingBag size={17} />{cartCount > 0 && <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-[#ef725f] px-1 text-[.62rem] font-bold" data-testid="text-mobile-cart-count">{cartCount}</span>}</button><button type="button" aria-label="Open menu" onClick={() => setMenuOpen(!menuOpen)} className="focus-ring grid h-11 w-11 place-items-center rounded-full border border-[#fff8e9]/40 lg:hidden" data-testid="button-mobile-menu">{menuOpen ? <X /> : <Menu />}</button></div></div>
+     {menuOpen && <div className="mx-3 rounded-2xl bg-[#163f42] p-5 shadow-xl lg:hidden"><nav className="grid gap-1">{links.map(([label, href]) => <a onClick={() => setMenuOpen(false)} key={href} href={href} className="rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-[#28575a]" data-testid={`link-mobile-${label.toLowerCase().replace(' ', '-')}`}>{label}</a>)}<button onClick={() => { setMenuOpen(false); onReserve(); }} className="mt-3 rounded-full bg-[#ef725f] px-4 py-3 text-xs font-bold uppercase tracking-wider" data-testid="button-mobile-reserve">Reserve a table</button></nav></div>}
   </header>;
 }
 
@@ -79,11 +75,6 @@ function Story() {
 }
 
 function Marquee() { return <div className="overflow-hidden bg-[#f8d47a] py-4 text-[#163f42]"><div className="marquee-track flex w-max items-center gap-8 whitespace-nowrap font-display text-2xl italic"><span>Good food, good mood</span><Sparkles className="text-[#ef725f]" size={19} /><span>Aloha in the city</span><Sparkles className="text-[#ef725f]" size={19} /><span>Stay for one more</span><Sparkles className="text-[#ef725f]" size={19} /><span>Good food, good mood</span><Sparkles className="text-[#ef725f]" size={19} /><span>Aloha in the city</span></div></div>; }
-
-function MenuSection({ onReserve }: { onReserve: () => void }) {
-  const [active, setActive] = useState(0);
-  return <section id="menu" className="section-pad bg-[#e5eee4]"><div className="container-wide"><div className="flex flex-col justify-between gap-7 md:flex-row md:items-end"><div className="reveal"><p className="eyebrow text-[#ef725f]">A taste of Hawaii</p><h2 className="font-display mt-4 text-5xl leading-none text-[#163f42] sm:text-7xl">On the table</h2></div><div className="reveal delay-1 max-w-sm text-sm leading-6 text-[#426266]">Thoughtful plates, sunny cocktails and the kind of food that makes conversation linger. <b className="text-[#163f42]">Rs 2,000–3,000 per person.</b></div></div><div className="mt-12 grid gap-5 md:grid-cols-3">{dishes.map((dish, i) => <article key={dish.name} className={`reveal delay-${i + 1} group ${i === active ? '' : 'md:translate-y-6'}`} onMouseEnter={() => setActive(i)} data-testid={`card-dish-${i}`}><div className="image-zoom relative aspect-[1.03] overflow-hidden rounded-[1.4rem] bg-[#d5dfd1]"><img src={dish.image} alt={dish.name} className="h-full w-full object-cover" /><span className="absolute left-4 top-4 rounded-full bg-[#fff8e9]/90 px-3 py-1.5 text-[.62rem] font-bold uppercase tracking-wider text-[#163f42]">{dish.tag}</span><button type="button" onClick={onReserve} className="absolute bottom-4 right-4 grid h-11 w-11 translate-y-2 place-items-center rounded-full bg-[#ef725f] text-[#fff8e9] opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100" aria-label={`Reserve a table for ${dish.name}`} data-testid={`button-dish-reserve-${i}`}><ArrowRight size={18} /></button></div><div className="flex items-start justify-between gap-3 pt-5"><div><h3 className="font-display text-2xl text-[#163f42]">{dish.name}</h3><p className="mt-1 text-sm leading-5 text-[#426266]">{dish.detail}</p></div><span className="shrink-0 pt-1 text-sm font-bold text-[#ef725f]">{dish.price}</span></div></article>)}</div><div className="mt-14 flex flex-col items-center justify-between gap-5 border-t border-[#bfd0c1] pt-6 sm:flex-row"><span className="text-sm text-[#426266]">More to discover, depending on the day’s best catch.</span><Button onClick={onReserve} variant="coral" testId="button-menu-reserve">Book your table <ArrowRight size={16} /></Button></div></div></section>;
-}
 
 function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -106,8 +97,17 @@ function Footer() {
 
 function Home() {
   const [reserveOpen, setReserveOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartLines, setCartLines] = useState<CartLine[]>([]);
+  const cartCount = useMemo(() => cartLines.reduce((sum, line) => sum + line.quantity, 0), [cartLines]);
   useReveal();
-  return <div className="grain site-shell"><Header onReserve={() => setReserveOpen(true)} /><main><Hero onReserve={() => setReserveOpen(true)} /><Marquee /><Story /><MenuSection onReserve={() => setReserveOpen(true)} /><Gallery /><SocialProof /><Visit onReserve={() => setReserveOpen(true)} /></main><Footer /><ReservationModal open={reserveOpen} onClose={() => setReserveOpen(false)} /><a href="#top" className="focus-ring fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full bg-[#f8d47a] text-[#163f42] shadow-lg transition hover:-translate-y-1" aria-label="Back to top" data-testid="link-back-to-top"><ArrowDown size={17} className="rotate-180" /></a></div>;
+  const addToCart = (item: MenuItem) => setCartLines((current) => {
+    const existing = current.find((line) => line.item.id === item.id);
+    return existing ? current.map((line) => line.item.id === item.id ? { ...line, quantity: line.quantity + 1 } : line) : [...current, { item, quantity: 1 }];
+  });
+  const changeQuantity = (id: string, quantity: number) => setCartLines((current) => quantity <= 0 ? current.filter((line) => line.item.id !== id) : current.map((line) => line.item.id === id ? { ...line, quantity } : line));
+  const removeFromCart = (id: string) => setCartLines((current) => current.filter((line) => line.item.id !== id));
+  return <div className="grain site-shell"><Header onReserve={() => setReserveOpen(true)} onCart={() => setCartOpen(true)} cartCount={cartCount} /><main><Hero onReserve={() => setReserveOpen(true)} /><Marquee /><Story /><MenuSection onAddToCart={addToCart} cartCount={cartCount} /><Gallery /><SocialProof /><Visit onReserve={() => setReserveOpen(true)} /></main><Footer /><ReservationModal open={reserveOpen} onClose={() => setReserveOpen(false)} /><CartDrawer open={cartOpen} lines={cartLines} onClose={() => setCartOpen(false)} onChangeQuantity={changeQuantity} onRemove={removeFromCart} onClear={() => setCartLines([])} onPlaceOrder={() => undefined} /><a href="#top" className="focus-ring fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full bg-[#f8d47a] text-[#163f42] shadow-lg transition hover:-translate-y-1" aria-label="Back to top" data-testid="link-back-to-top"><ArrowDown size={17} className="rotate-180" /></a></div>;
 }
 
 function Router() {

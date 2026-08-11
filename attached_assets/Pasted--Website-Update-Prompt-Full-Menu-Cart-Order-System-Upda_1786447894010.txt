@@ -1,0 +1,35 @@
+**Website Update Prompt: Full Menu + Cart + Order System**
+
+Update the existing Cafe Hawaii website, keeping the exact same tropical, laid-back "Aloha" vibe fused with cozy upscale dining elegance already established — tiki-lounge warmth meets modern restaurant polish. Do not change the existing color palette, typography, or overall visual language. This is an addition to the current site, not a redesign.
+
+**Maintain the existing design system:**
+- Colors: warm coral/burnt-orange and golden-yellow as primary accents, deep teal/turquoise as secondary, cream/off-white background, dark charcoal/espresso-brown text
+- Typography: rounded friendly sans-serif for body (Poppins/Nunito), bold tropical-feeling display font for headings (Fraunces/Playfair), script accent font for "Aloha"-style callouts
+- Same smooth scroll animations, hover effects, and mobile-responsive, fast-loading behavior already used across the site
+- New sections should feel like they were part of the original design, not bolted on
+
+**1. Full Menu Section**
+Replace/expand the current "Menu highlights" preview into a complete, browsable menu section containing every category below, each styled as elegant cards with the same warmth and polish as the rest of the site:
+
+Appetizers, Soup, Salad, Sandwich, Wraps, Beef Steak, Chicken, Chinese, Burger, Pizza, Pasta, Sea Food, Coffee's, Frappes, Mocktails, Shakes
+
+Each item should display: name, short description, and price (Rs). Use a tabbed or filterable category layout so guests can jump between sections without endless scrolling. I'll provide the full structured menu data (all items, descriptions, and prices) separately — build the component so this data can be plugged in easily via a data file/array rather than hardcoded per item.
+
+**2. Add to Cart**
+- Every menu item gets an "Add to Cart" button in the same coral accent style as the existing CTAs
+- A persistent cart icon (in the nav, styled to match) shows the current item count
+- Clicking it opens a cart drawer/modal — reuse the same modal animation style as the existing Reservation modal for consistency
+- Inside the cart: item name, quantity with +/- controls, price per item, running subtotal, and a "Remove" option per item, plus "Clear Cart"
+
+**3. Place Order**
+- A "Place Order" button at the bottom of the cart, styled like the site's primary CTA (coral, rounded, matching "Reserve a Table")
+- On order placement, show a confirmation state/screen — reuse the same confirmation pattern already used after a successful reservation, so it feels consistent
+- Order summary should show all items, quantities, and total price before confirming
+- This can be UI/local-state only for now — no payment gateway integration needed yet
+
+**Important — keep it consistent, not tangled:**
+- Do not alter the Hero, About, Reservation modal, Gallery, Reviews, or Location sections — only reuse their visual/animation patterns
+- Keep Menu, Cart, and Order as their own clearly separated components
+- The end result should feel like one cohesive site — same warmth, same polish, same "beachside restaurant that takes its food seriously" feel — just with a fully functional menu and ordering flow added on top
+
+After building, run the dev server and check the browser preview to confirm the new Menu, Cart, and Order flow all work correctly and match the existing design before confirming completion.
