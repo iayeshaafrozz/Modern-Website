@@ -1,0 +1,188 @@
+# Cafe Hawaii — Full Menu
+
+*All prices are exclusive of taxes*
+
+## Appetizers
+| Item | Description | Price |
+|---|---|---|
+| Chicken Cheese Goujon | A harmonious blend of succulent chicken and rich cheddar, golden-fried to perfection, paired with peri peri mayo dip | 1199 |
+| Peri Bite | Golden-breaded fried chilies, generously stuffed with a tantalizing blend of chicken and cheese, perfectly paired with crispy fries | 799 |
+| Chicken Quesadilla | Tortillas brimming with mexican-spiced chicken, vibrant vegetables, and luscious shredded cheese. Served alongside tomato salsa and zesty sauce | 799 |
+| Fried Platter | Featuring crispy chicken strips, golden onion rings, perfectly seasoned french fries, and decadent chicken lollipop. Accompanied by a chilled ranch and garlic mayo | 1499 |
+| Chicken Cheese Nachos | Cheesy chips adorned with layers of salsa-covered chicken, crowned with a luscious cheese sauce and salsa | 1099 |
+| Tacos | Seasoned chicken entwined with bell peppers, garlic, iceberg lettuce, and a hint of spicy salsa for an explosion of flavors | 1149 |
+| Dynamite Prawn | Batter-fried prawns, artfully topped with our irresistible dynamite dressing | 1149 |
+| Dynamite Chicken | Tender chicken pieces marinated in a flavorful blend of spices and grilled to perfection, offering a burst of savory goodness in every bite | 999 |
+| Hot Buffalo Wings | Buffalo wings marinated with hot and sour sauce topped with sesame seeds with red buffalo sauce | 899 |
+| Mozzarella Sticks | Premium mozzarella sticks boast oozy cheese encased in a crispy coating | 999 |
+| Butterfly Prawns | Crispy deep fried prawns served with fries & tartar sauce | 1650 |
+| Mayo Garlic Fries | Crispy fries tossed in a creamy garlic mayo sauce, creating a savory and indulgent treat | 550 |
+| Fried Calamari | Tender pieces of squid soaked in butter milk, coated in seasoned flour served with tatar sauce | 1199 |
+| Potato Spud | Grilled chicken and vegetables and a creamy alfredo sauce nestled in with a baked jacket potato crowned with cheese and spring onion served with a side of ranch dressing | 799 |
+| Prawn Tempura | Irresistible blend of crispy, airy light prawns, perfectly battered in a Japanese style | 1495 |
+| Cheesy Mushroom Fries | Crispy golden fries topped with savory sauteed mushroom and smothered in melted cheese | 799 |
+| Potato The Bravo | Indulge in our spicy roasted potato wedges, perfectly tossed with zesty green chilies, fresh coriander, and olives. Served alongside a garlic sauce | 699 |
+
+## Soup
+| Item | Description | Single | Family |
+|---|---|---|---|
+| Thai Soup | Blend of fragrant thai spices and tender chicken, served in a flavorful broth | 499 | 1495 |
+| Corn Soup | Chicken corn soup served with fresh vegetables, optional eggs, and crisp crackers | 499 | 1495 |
+| Hot & Sour Soup | Hot and sour soup served with fish crackers | 499 | 1495 |
+| Cream of Mushroom | Cream of mushroom soup, served with garlic bread for a rich and comforting experience | 599 | 1599 |
+
+## Salad
+| Item | Description | Price |
+|---|---|---|
+| Hawaii Special Salad | Our go-to salad made with crisp iceberg lettuce, crunchy bread, succulent cheesy tomatoes, zesty olives, spicy jalapenos, and a generous sprinkle of Parmesan cheese | 999 |
+| Grilled Chicken Salad | A refreshing mix of crisp greens, cherry tomatoes, cucumbers, and grilled chicken, drizzled with your choice of dressing for a light yet satisfying meal | 1099 |
+| Caesar Salad | Crisp iceberg and romaine lettuce, caesar dressing, croutons, and grilled chicken slices | 999 |
+
+## Sandwich
+| Item | Description | Price |
+|---|---|---|
+| Hawaii Special Sandwich | A hot cheese sandwich typically prepared by heating slice of cheese between slice of bread with a cooking fat such butter or mayonnaise | 1299 |
+| Club Sandwich | Classic club sandwich, crafted with white bread and served with a side of golden fries | 1150 |
+| Grilled Chicken Sandwich | Juicy marinated chicken paired with crisp iceberg lettuce, juicy tomato, and creamy egg mayo, all nestled between perfectly golden-fried bread for an unforgettable flavor experience | 1150 |
+| Beef Roast Sandwich | Laden with thinly sliced roasted beef, crisp vegetables, and a velvety cream spread | 1350 |
+| Philly Cheesesteak Sandwich | Mouthwatering steak and cheese sandwich featuring succulent, thinly sliced beef steak and gooey melted cheese, all nestled in a soft, fresh hoagie roll. Pair it with crispy fries | 1350 |
+
+## Wraps
+| Item | Description | Price |
+|---|---|---|
+| Chicken Fajita Wraps | Delight in our soft, crispy tortillas bursting with flavorful chicken fajita, crisp iceberg, lettuce, capsicum, olives, and a rich slice of cheddar, all drizzled with our creamy mayo dressing | 1250 |
+| Beef Fajita Wraps | Indulge in soft tortillas stuffed with succulent beef fajita, crisp iceberg lettuce, vibrant capsicum, zesty olives, savory onions, and rich American cheddar | 1349 |
+| Crispy Chicken Wraps | Indulge in a delicious crispy chicken wrap, packed with fresh, crunchy lettuce, zesty jalapeños, and a mouthwatering slice of cheese, all drizzled with creamy mayo dressing | 1299 |
+
+## Beef Steak
+| Item | Description | Price |
+|---|---|---|
+| Beef Pepper Steak | Loaded tenderloin with veggies in an Asian-inspired sauce, served with baked potato at your desired temperature | 2099 |
+| Beef Moroccan Steak | Grilled tenderloin marinated in exotic spices, elegantly served with side of your choice | 2099 |
+| Beef Mushroom Steak | Tenderloin featuring mushroom sauce in a rich and creamy garlic blend, accompanied by side of your choice | 2099 |
+| Beef Double Decker Steak | House specialty — a 250g double-layered tenderloin flap steak with cheddar slice cheese, melted on top of our signature sauce, and your choice of sideline | 2099 |
+| Entrecote Cafe Hawaii de Paris | Cafe hawaii de paris sauce is a butter based sauce served with grilled beef when it is served with the sliced portion of an entrecote of four fillet sauce | 2450 |
+| Grilled Beef Fillet Steak | Prime cut of sliced grilled beef, served with rosemary potatoes, creamy spinach & garlic herb butter | 2099 |
+| Chef Specials Steak | Savour 250 grams of juicy tenderloin steak, topped with rich melted cheese, all nestled in our exquisite signature vegetable sauce. Pair it with your choice of a delightful sideline for a truly unforgettable meal | 2399 |
+
+## Chicken
+| Item | Description | Price |
+|---|---|---|
+| Chicken Tarragon | Freshly prepared chicken meets the insistent herbal notes of tarragon, served with side of your choice | 1650 |
+| Chicken Moroccan | Grilled chicken, expertly marinated in exotic spices, served with a side of your choice | 1650 |
+| Mushroom Chicken | Tender chicken bathed in a rich, creamy garlic sauce infused with the earthy delight of mushroom, perfectly complemented by a side of your choice | 1650 |
+| Jalapeno Chicken | Grilled chicken generously filled with a creamy jalapeno sauce, served alongside side of your choice | 1650 |
+| Cheese Fried Chicken | Deep-fried chicken, adorned with green onions and generously topped with melted organic mozzarella cheese, paired with the duo of sauces, alongside side of your choice | 1750 |
+| Mascava Chicken | Golden fried chicken breast stuffed with mushroom, served with creamy tarragon sauce sidelined with your choice mashed potato/fries or rice | 1750 |
+| Italian Chicken | Golden fried chicken breast topped with grilled pepperoni, tomato sauce & cheese, sidelined with your choice mashed potato/fries or rice | 1750 |
+| Chicken Cheesy Angry Steak | Mouthwatering grilled chicken, perfectly melted mozzarella cheese, caramelized onions, and a chef-crafted trio of sauces | 1799 |
+| Parmesan Chicken | Indulge in our crispy chicken fillet, generously coated in a rich cream and tomato sauce, and finished with a savory layer of crushed parmesan cheese | 1799 |
+
+## Chinese
+| Item | Description | Price |
+|---|---|---|
+| Beef Chilli Dry | Dry beef chili, expertly cut into thin strips, marinated and served with a side of rice | 1450 |
+| Chicken Chowmein | Immerse yourself in the secret sauce magic of our chicken chowmein that promises to captivate your palate | 1250 |
+| Thai Asian Beef Bowl | Thai beef stir fry, featuring seasoned vegetables tossed in thai sauce and served with fried rice | 1499 |
+| Chicken Manchurian | Manchurian chicken with red sauce and whole chili, served with a side of fried rice | 1199 |
+| Chicken Chilli Dry | Crispy chicken and vegetables served with rice | 1299 |
+| Chicken Shashlik | Tender pieces of marinated chicken skewered with colorful bell peppers, onions, and grilled to perfection, served with fragrant rice pilaf | 1199 |
+| Mexican Beef | Beef stir fry with seasoned vegetables tossed in our Hawaii signature sauce, served with garlic rice | 1450 |
+| Stir Fry Chicken | Chicken stir fry with seasoned vegetables tossed in our Hawaii signature sauce, served with garlic rice | 1299 |
+| Schezwan Chicken | Indulge in our tender, juicy, and crispy chicken, perfectly paired with a vibrant sweet and spicy sauce brimming with zesty red chilies and fresh green onions. Served with fragrant fried rice | 1299 |
+
+## Burger
+| Item | Description | Price |
+|---|---|---|
+| Hawaii Special Burger | Beef lava patty with melted cheese topped with crispy onion rings, grilled mushrooms, smoke and bbq sauces | 1299 |
+| Chicken Bombastic | A deep-fried 200g chicken patty generously stuffed with a delectable blend of mozzarella and cheddar cheese | 1299 |
+| Beef Old School | With a topping of succulent beef undercut, smothered in mozzarella sauce, and accompanied by a medley of taco-inspired vegetables | 1099 |
+| Crispy Burger | Crispy chicken fried perfection, delivering the juiciest bite and unparalleled satisfaction | 950 |
+
+## Pizza
+| Item | Description | Price |
+|---|---|---|
+| Hawaii Special Supreme Pizza | Served with marinated chicken, pepperoni, olive jalapeños & mozzarella cheese | 1550 |
+| Creamy Shishtaouk Pizza | Creamy tikka capsicum, black olives, sliced onions, tomatoes, and mozzarella pizza | 1550 |
+| Pepperoni Pizza | Pepperoni masterpiece featuring beef pepperoni, tomato red sauce, mozzarella cheese, jalapenos, and a touch of chili oil | 1550 |
+| Spicy Ranch Pizza | Boasting ranch-marinated chicken, tomatoes, and jalapenos atop a light ranch sauce base for a tantalizing blend of heat and creaminess | 1550 |
+| Margherita Pizza | Classic Margherita pizza, adorned with luscious mozzarella cheese, sliced tomatoes, and basil leaves, finished with a drizzle of chili oil | 1399 |
+| Turkish Chicken Pied | A crispy turkish flatbread pizza, topped with succulent chicken, creamy cheese, vibrant capsicum, savory onions, and zesty jalapenos, accompanied by a rich garlic dip that enhances every bite | 1450 |
+| Turkish Beef Pied | A delectable oval flatbread hailing from Turkey, generously garnished with savory beef mince and a vibrant medley of fresh vegetables, including onions, capsicum, jalapenos, and juicy tomatoes | 1499 |
+
+## Pasta
+| Item | Description | Price |
+|---|---|---|
+| Cajun Spicy Pasta | Pan-fried penne pasta in a luscious Italian white creamy Cajun spicy sauce, paired with enticing garlic bread | 1450 |
+| Fettuccine Alfredo Pasta | Fettuccine bathed in our rendition of the classic alfredo sauce, enriched with sundried tomatoes, and accompanied by perfectly paired garlic bread | 1450 |
+| Lasagna Style | Soft noodles enveloped in slow-cooked beef mince luxuriously layered with bechamel sauce and crowned with piping hot cheese | 1450 |
+| Bolognese Pasta | Bolognese pasta with a harmonious blend of robust red sauce, savory beef mince, Parmesan cheese, and basil leaves, complemented by garlic bread | 1350 |
+| Chef Ahsan Special Pasta | Fettuccine pasta tossed with minced beef & spicy pomodoro sauce, topped shaved parmesan, served with garlic bread | 1550 |
+| Penny Al Pollo Rustico | Our Mamamia crispy chicken is perfectly paired with tender penne pasta, zesty olives, spicy jalapeños, and vibrant capsicum with rich Italian cream and gooey mozzarella cheese melted on top. Enjoy it alongside with buttery garlic bread | 1450 |
+
+## Sea Food
+| Item | Description | Price |
+|---|---|---|
+| Sole Fish | Shallow-fried sole fish with cream sauce and vegetables, elegantly served with steamed rice | 1699 |
+| Chilli Garlic Prawn | Fresh prawns cooked in chili butter oil, served with garlic bread for a delightful culinary experience | 1550 |
+| Fish and Chips | Our classic marinated Bangus fish, fried to a stunning golden hue. It's served by crispy fries and a ranch sauce | 1699 |
+| Mediterranean Fish | Mediterranean fish, based on a herbed foundation and adorned with the taste of creamy sauce | 1699 |
+| Tamarind Fish | Crisp fried fish served with a spicy Tamarind Sauce | 1699 |
+| Crispy Pan Fried Fish | Experience the delight of pan-fried crispy fish fillets, perfectly complemented by a creamy sauce. Serve it alongside sauteed vegetables and fragrant garlic rice | 1899 |
+| Lobster Thermidor | In a lobster meat add gruyere and parmesan cheese with dijon mustard pepper. Stir until the cheese melts and the sauce is smooth. Serve with garlic rice | 9999 |
+| Grilled Lobster | Grilled Garlic Butter Lobster is grilled over the coals covered in butter and topped with Paprika & serve with garlic rice & vegetables | 9999 |
+
+## Coffee's
+| Item | Price |
+|---|---|
+| Cappuccino | 499 |
+| Cafe Latte | 499 |
+| Expresso | 345 |
+| Americano | 345 |
+| Mocha | 550 |
+| Cold Affogato | 450 |
+| Hot Chocolate | 550 |
+| Spanish Latte | 550 |
+| Cold Coffee | 450 |
+| Green Tea | 250 |
+| Mix Tea | 250 |
+| Coffee's Flavours | 195 |
+
+## Frappes
+| Item | Price |
+|---|---|
+| Vanilla | 495 |
+| Chocolate | 495 |
+| Hazelnut | 495 |
+| Caremel | 495 |
+
+## Mocktails
+| Item | Description | Price |
+|---|---|---|
+| Passion Boba | Fresh passion fruit puree mixed with crushed ice, topping with flavors boba | 595 |
+| Strawberry Boba | Fresh strawberries puree mixed with crushed ice, topping with flavors boba | 595 |
+| Jonny Rocket | A very refreshing drink combination of pomegranate, redgrapes & lemon juice | 595 |
+| Fruit Punch | A mixed drink made with mix fruit juice, and can be served on the rocks | 495 |
+| All Berry Margrita | A sweet and sour drink that combines the tartness of lemon juice with the cooling effect of mix berry | 495 |
+| Blue Margrita | A slush base drink combination of blue lagoon syrup, lemon juice, sugar syrup | 495 |
+| Blue Adam (Red Bull) | Red bull blue edition is a blueberry-flavored energy drink | 495 |
+| All Berries Smoothie | A blended mixture of mix fruits | 795 |
+| Pina Colada | A pina colada made with whipe cream coconut powder, pineapple juice, and served with blended ice | 495 |
+| Mint Lemonade | A refreshing drink to enjoy on a hot sunny day. The lemons add a nice tangy acidity while the mint brings in a nice cooling effect | 495 |
+| Mojito | Made from fresh mint, muddled limes, sugar syrup and lime wheel, which is combined and mixed using crushed ice to form a long, refreshing mocktail | 395 |
+| Fresh Juice | — | 399 |
+| Fresh Lime | — | 320 |
+| Soft Drink | — | 220 |
+| Mineral Water Large | — | 220 |
+| Mineral Water Small | — | 120 |
+
+## Shakes
+| Item | Price |
+|---|---|
+| Oreo | 545 |
+| Chocolate | 495 |
+| Strawberry | 495 |
+| Vanilla | 495 |
+
+---
+*Mild / Spice Level / Chef Recommendation icons noted next to certain items on the original menu*
