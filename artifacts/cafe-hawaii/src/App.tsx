@@ -7,6 +7,7 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 import { ArrowDown, ArrowRight, Check, ChevronLeft, ChevronRight, Clock3, Instagram, MapPin, Menu, Phone, ShoppingBag, Sparkles, Star, X } from 'lucide-react';
 import { CartDrawer } from '@/components/CartDrawer';
+import { CheckoutModal } from '@/components/CheckoutModal';
 import { MenuSection } from '@/components/MenuSection';
 import { type CartLine, type MenuItem } from '@/data/menu';
 
@@ -110,6 +111,7 @@ function Footer() {
 function Home() {
   const [reserveOpen, setReserveOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [cartLines, setCartLines] = useState<CartLine[]>([]);
   const cartCount = useMemo(() => cartLines.reduce((sum, line) => sum + line.quantity, 0), [cartLines]);
   useReveal();
@@ -119,7 +121,17 @@ function Home() {
   });
   const changeQuantity = (id: string, quantity: number) => setCartLines((current) => quantity <= 0 ? current.filter((line) => line.item.id !== id) : current.map((line) => line.item.id === id ? { ...line, quantity } : line));
   const removeFromCart = (id: string) => setCartLines((current) => current.filter((line) => line.item.id !== id));
-  return <div className="grain site-shell"><Header onReserve={() => setReserveOpen(true)} onCart={() => setCartOpen(true)} cartCount={cartCount} /><main><Hero onReserve={() => setReserveOpen(true)} /><Marquee /><Story /><MenuSection onAddToCart={addToCart} onChangeQuantity={changeQuantity} cartLines={cartLines} cartCount={cartCount} /><Gallery /><SocialProof /><Visit onReserve={() => setReserveOpen(true)} /></main><Footer /><ReservationModal open={reserveOpen} onClose={() => setReserveOpen(false)} /><CartDrawer open={cartOpen} lines={cartLines} onClose={() => setCartOpen(false)} onChangeQuantity={changeQuantity} onRemove={removeFromCart} onClear={() => setCartLines([])} onPlaceOrder={() => undefined} /><a href="#top" className="focus-ring fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full bg-[#f8d47a] text-[#163f42] shadow-lg transition hover:-translate-y-1" aria-label="Back to top" data-testid="link-back-to-top"><ArrowDown size={17} className="rotate-180" /></a></div>;
+  
+  const handleStartCheckout = () => {
+    setCartOpen(false);
+    setCheckoutOpen(true);
+  };
+
+  const handleOrderComplete = () => {
+    setCartLines([]);
+  };
+
+  return <div className="grain site-shell"><Header onReserve={() => setReserveOpen(true)} onCart={() => setCartOpen(true)} cartCount={cartCount} /><main><Hero onReserve={() => setReserveOpen(true)} /><Marquee /><Story /><MenuSection onAddToCart={addToCart} onChangeQuantity={changeQuantity} cartLines={cartLines} cartCount={cartCount} /><Gallery /><SocialProof /><Visit onReserve={() => setReserveOpen(true)} /></main><Footer /><ReservationModal open={reserveOpen} onClose={() => setReserveOpen(false)} /><CartDrawer open={cartOpen} lines={cartLines} onClose={() => setCartOpen(false)} onChangeQuantity={changeQuantity} onRemove={removeFromCart} onClear={() => setCartLines([])} onPlaceOrder={handleStartCheckout} /><CheckoutModal open={checkoutOpen} lines={cartLines} onClose={() => setCheckoutOpen(false)} onOrderComplete={handleOrderComplete} /><a href="#top" className="focus-ring fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full bg-[#f8d47a] text-[#163f42] shadow-lg transition hover:-translate-y-1" aria-label="Back to top" data-testid="link-back-to-top"><ArrowDown size={17} className="rotate-180" /></a></div>;
 }
 
 function Router() {

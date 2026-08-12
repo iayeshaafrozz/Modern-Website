@@ -65,30 +65,16 @@ function CartContents({ lines, onClose, onChangeQuantity, onRemove, onClear, onP
 }
 
 export function CartDrawer({ open, lines, onClose, onChangeQuantity, onRemove, onClear, onPlaceOrder }: CartDrawerProps) {
-  const [ordered, setOrdered] = useState(false);
-  const subtotal = lines.reduce((sum, line) => sum + line.item.price * line.quantity, 0);
-
-  useEffect(() => {
-    if (!open) setOrdered(false);
-  }, [open]);
-
   if (!open) return null;
 
   return (
     <div className="modal-backdrop fixed inset-0 z-[65] bg-[#163f42]/75 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="cart-title">
       <div className="absolute inset-y-0 right-0 flex w-full max-w-xl flex-col bg-[#fff8e9] text-[#163f42] shadow-2xl">
         <div className="flex items-center justify-between border-b border-[#d9cfbc] px-5 py-5 sm:px-7">
-          <div><p className="eyebrow text-[#ef725f]">{ordered ? 'Order received' : 'Your Aloha order'}</p><h2 id="cart-title" className="font-display mt-1 text-3xl">{ordered ? 'We’ll start cooking.' : 'Your cart.'}</h2></div>
+          <div><p className="eyebrow text-[#ef725f]">Your Aloha order</p><h2 id="cart-title" className="font-display mt-1 text-3xl">Your cart.</h2></div>
           <button type="button" onClick={onClose} className="focus-ring grid h-10 w-10 place-items-center rounded-full bg-[#f2e9d6] transition hover:bg-[#f8d47a]" aria-label="Close cart" data-testid="button-close-cart"><X size={18} /></button>
         </div>
-        {ordered ? (
-          <div className="grid flex-1 place-items-center px-8 py-16 text-center">
-            <span className="grid h-16 w-16 place-items-center rounded-full bg-[#dbe9d4] text-[#477348]"><Check size={30} /></span>
-            <h3 className="font-display mt-6 text-4xl text-[#163f42]">Mahalo.</h3>
-            <p className="mt-3 max-w-xs text-sm leading-6 text-[#426266]">Your order request for <b className="text-[#163f42]">{formatPrice(subtotal)}</b> is on its way. Our team will call to confirm the details shortly.</p>
-            <button type="button" onClick={onClose} className="mt-7 rounded-full bg-[#163f42] px-6 py-3 text-xs font-bold uppercase tracking-[.15em] text-[#fff8e9]" data-testid="button-finish-order">Back to Cafe Hawaii</button>
-          </div>
-        ) : <CartContents lines={lines} onClose={onClose} onChangeQuantity={onChangeQuantity} onRemove={onRemove} onClear={onClear} onPlaceOrder={() => { setOrdered(true); onPlaceOrder(); }} />}
+        <CartContents lines={lines} onClose={onClose} onChangeQuantity={onChangeQuantity} onRemove={onRemove} onClear={onClear} onPlaceOrder={onPlaceOrder} />
       </div>
     </div>
   );
